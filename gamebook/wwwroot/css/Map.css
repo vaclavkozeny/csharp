@@ -1,0 +1,236 @@
+.start-page{
+    height: 100%;
+    text-align: center;
+    background: url(../Assest/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;}
+.start-caption {
+    padding: 0.2em;
+    padding-top: 10%;
+    text-align: center;
+}
+.start-caption h1 {
+    text-shadow: 2px 2px 0px #000;
+    color: #E0E0e0;
+    margin-bottom: 1em;
+}
+.info-container {
+    position: absolute;
+    top: 1.5em;
+    left: 1.5em;
+    z-index: 1000;
+}
+.info-container button {
+    background: transparent;
+    outline: none;
+    border: 0;
+    font-size: 2.5em;
+    color: #e02119;
+    transition: transform 0.1s ease-in-out;
+}
+.info-content {
+    display: none;
+    background-color: #e5b586;
+    border: solid 2px #5f3415;
+    padding: 1em;
+    font-weight: 500;
+}
+.info-content .close{
+    position: relative;
+    top: -0.4em;
+    right: -0.4em;
+    color: #000;
+    font-size: 1em;
+}
+.info-content b{
+    font-weight: 800;
+}
+.info-container button:hover {
+    transform: scale(1.1);
+}
+.map-page {
+    background: url(../Assest/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: stretch;
+}
+.map {
+    flex-basis: 80%;
+    z-index: 10;
+    position: relative;
+    height: fit-content;
+}
+.map-image{
+    width: 100%;
+    max-height: 100vh;
+}
+.description-container{
+    flex-basis: 20%;
+    padding: 2em;
+}
+.arena-page .description {
+    margin: 0 auto;
+    padding: 0.3em;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+.arena-page .description .hp {
+        color: rgb(216, 29, 22);
+}
+.description {
+    background-color: #e5b586;
+    border: solid 2px #5f3415;
+    border-radius: 0.2em;
+    margin: 0 auto;
+    padding: 0.3em;
+}
+.description h3{
+    font-size: 1.25em;
+}
+.description ul{
+    margin-left: 0.4em;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+.description a{
+    color: #101010;
+}
+.description a:hover{
+    color: #101010
+}
+.description p{
+    display: inline;
+}
+.description i{
+    margin-right: 0.2em;
+    color:rgb(230, 139, 20)
+}
+.stats {
+    background-color: #e5b586;
+    border: solid 2px #5f3415;
+    border-radius: 0.2em;
+    margin: 0 auto;
+    padding: 0.3em;
+    margin-top: 1em;
+    font-size: 1.3rem;
+}
+.stats i{
+    margin: 0 0.1em;
+}
+.stats-health{
+    color: rgb(216, 29, 22);
+}
+.stats-coins{
+    color: rgb(255, 217, 0);
+}
+.stats-mana{
+    color: rgb(21, 122, 206);
+}
+.stats-stamina{
+    color: rgb(19, 160, 195);
+}
+.stats-dmg{
+    color: rgb(59, 59, 59)
+}
+.stats-mg{
+    color:rgb(254, 255, 0)
+}
+.stats-earth {
+    color: rgb(66, 57, 28)
+}
+.stats-green {
+    color: rgb(64, 201, 30)
+}
+.button-start {
+    font-size: 1.8rem;
+    margin-top: 5em;
+    display: inline-block;
+}
+
+.player{
+    color: #c33a35;
+    font-size: 2.5rem;
+}
+#StartLocation {
+    position: absolute;
+    top: 45%;
+    left: 5%;
+}
+#VesniceLocation {
+    position: absolute;
+    top: 70%;
+    left: 32%;
+}
+#HospodaLocation {
+    position: absolute;
+    top: 70%;
+    left: 32%;
+}
+#KostelLocation{
+    position: absolute;
+    top: 45%;
+    left: 20%;
+}
+#ObchodLocation {
+    position: absolute;
+    top: 27%;
+    left: 58%;
+}
+#StromLocation {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+}
+#SopkaLocation {
+    position: absolute;
+    top: 2%;
+    left: 12%;
+}
+#TrhlinaLocation {
+    position: absolute;
+    top: 27%;
+    left: 78%;
+}
+#MestoLocation {
+    position: absolute;
+    top: 27%;
+    left: 58%;
+}
+.pub {
+    background: url(../Assest/cube-1963036_1920.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.gameover-page{
+    text-align: center;
+    background-color: #000;
+    height: 100%;
+    padding-top: 10%;
+}
+.gameover-main{
+    color: #fff;
+    font-family: serif;
+    font-size: 6rem;
+}
+.gameover-main h1{
+    font-size: inherit;
+}
+
+@media screen and (min-width: 2560px){
+    html{
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 3840px){
+    html{
+        font-size: 1.9rem
+    }
+}

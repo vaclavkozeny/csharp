@@ -1,0 +1,88 @@
+﻿@page
+@model GameBook.Pages.PlaceModel
+@{
+}
+
+<div class="map-page">
+    <div class="info-container">
+        <button onclick="document.getElementById('info').style.display = 'block'">
+            <i class="fas fa-question-circle"></i>
+        </button>
+        <div id="info" class="info-content">
+            <button class="close" onclick="document.getElementById('info').style.display = 'none'"><i class="fas fa-times"></i></button>
+            <p>Prozkoumávej lokace a <b>poraž všechny elementální golemy</b>.</p>
+            <p>Dávej si pozor, ať se během souboje moc nevyčerpáš, to by znamenalo tvou smrt.</p>
+            <p>Po souboji si můžeš doplnit životy v <b>hospodě</b> a manu u <b>léčivého stromu</b>.</p>
+            <p>To tě ale bude něco stát.</p>
+            <p>Peníze si můžeš vydělat <b>bojováním v aréně</b>.</p>
+        </div>
+    </div>
+    <div class="map">
+        <img class="map-image" src="~/Assest/map.png">
+        <!--Znacka hrace-->
+        <div class="player" id="@(Model.Location.Title)Location">
+            <i class="fas fa-map-marker"></i>
+        </div>
+    </div>
+    <div class="description-container">
+        <div class="description">
+            <h1>@Html.Raw(Model.Location.Title)</h1>
+            <b class="place-info">@Html.Raw(Model.Location.Description)</b>
+            <h3>Možnosti:</h3>
+            <ul>
+                @foreach (var c in Model.Connections)
+                {
+                    <li>
+                        @if (String.IsNullOrEmpty(c.TargetSpecialPage))
+                        {
+                            <a asp-page="Place" asp-route-id="@c.Target"><i class="fas fa-arrow-circle-right"></i>@Html.Raw(c.Description)</a>
+                        }
+                        else if (c.Target == Room.Arena)
+                        {
+                            <a asp-page="Arena" asp-route-returnUrl="@c.TargetSpecialPage"><i class="fas fa-arrow-circle-right"></i>@Html.Raw(c.Description)</a>
+                        }
+                        else
+                        {
+                            <a asp-page="@c.TargetSpecialPage" asp-route-id="@c.Target"><i class="fas fa-arrow-circle-right"></i>@Html.Raw(c.Description)</a>
+                        }
+                    </li>
+                }
+            </ul>
+        </div>
+        <div class="stats">
+            <ul>
+                <li><i class="fas fa-heart stats-health"></i>HP: <strong>@Model.State.HP</strong></li>
+                <li><i class="fas fa-coins stats-coins"></i>Coins: <strong>@Model.State.Coins</strong></li>
+                <li><i class="fas fa-fire-alt stats-mana"></i>Mana: <strong>@Model.State.Mana</strong></li>
+                <li><i class="fas fa-bolt stats-stamina"></i>Stamina: <strong>@Model.State.Stamina</strong></li>
+                <!--<li><i class="fas fa-gavel stats-dmg"></i>Damage: <strong>@Model.State.DMGMX</strong></li>-->
+                <!--<li><i class="fas fa-broom stats-mg"></i>Magic: <strong>@Model.State.MGMX</strong></li>-->
+                <li>-----</li>
+                <li>
+                    <i class="fas fa-gem stats-health"></i>Fire Stone: <strong>
+                        <i style="color: @(Model.State.FireStoneCount > 0 ? "green" : "red")" class="fas fa-@(Model.State.FireStoneCount > 0 ? "check" : "times")"></i>
+                    </strong>
+                </li>
+
+                <li>
+                    <i class="fas fa-gem stats-earth"></i>Earth Stone: <strong>
+                        <i style="color: @(Model.State.EarthStoneCount > 0 ? "green" : "red")" class="fas fa-@(Model.State.EarthStoneCount > 0 ? "check" : "times")"></i>
+                    </strong>
+                </li>
+
+                <li>
+                    <i class="fas fa-gem stats-mana"></i>Water Stone: <strong>
+                        <i style="color: @(Model.State.WaterStoneCount > 0 ? "green" : "red")" class="fas fa-@(Model.State.WaterStoneCount > 0 ? "check" : "times")"></i>
+                    </strong>
+                </li>
+
+                <li>
+                    <i class="fas fa-gem stats-green"></i>Green Stone: <strong>
+                        <i style="color: @(Model.State.GreenStoneCount > 0 ? "green" : "red")" class="fas fa-@(Model.State.GreenStoneCount > 0 ? "check" : "times")"></i>
+                    </strong>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>

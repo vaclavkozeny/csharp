@@ -1,0 +1,15 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<div class="start-page">
+    <div class="start-caption">
+        <h1>Vítej, bojovníku</h1>
+    </div>
+    <div class="alert alert-tip">
+        <strong>Tip</strong>: Hraj na Fullscreen
+        <p>Tvým cílem je nasbírat všechny kameny elementů, ale v cestě ti bude stát spousta nepřátel ...</p>
+    </div>
+    <a asp-page="Place" asp-route-id="0" class="button button-start"  >Začít</a>
+</div>

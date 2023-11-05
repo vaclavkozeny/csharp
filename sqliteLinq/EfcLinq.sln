@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EfcLinq", "EfcLinq\EfcLinq.csproj", "{CBF381E8-0A28-4BE5-9724-6BD73CA74B29}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CBF381E8-0A28-4BE5-9724-6BD73CA74B29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBF381E8-0A28-4BE5-9724-6BD73CA74B29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBF381E8-0A28-4BE5-9724-6BD73CA74B29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBF381E8-0A28-4BE5-9724-6BD73CA74B29}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {37E5E5D6-6617-481F-A6AE-7DB7D6860408}
+	EndGlobalSection
+EndGlobal

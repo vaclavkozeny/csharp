@@ -1,0 +1,43 @@
+﻿@page
+@model GameBook.Pages.EarthStoneFightModel
+@{
+}
+
+<div class="arena-page">
+    <div class="monster-container">
+        <div class="description">
+            <p>Enemy HP: <span class="hp">@Model.State.CurrentEnemyHP</span></p>
+        </div>
+        <img src="~/Assest/monsters/earth.png" />
+    </div>
+
+    <form class="attacks" method="post">
+        <input type="hidden" asp-for="ReturnUrl" />
+        @if (Model.State.Stamina <= 0)
+        {
+            <button disabled type="submit" asp-route-type="1" class="button">Útok</button>
+        }
+        else
+        {
+            <button type="submit" asp-route-type="1" class="button">Útok</button>
+        }
+        @if (Model.State.Mana <= 1)
+        {
+            <button disabled type="submit" asp-route-type="2" class="button">Magie</button>
+        }
+        else
+        {
+            <button type="submit" asp-route-type="2" class="button">Magie</button>
+        }
+    </form>
+    <div class="stats">
+        <ul>
+            <li><i class="fas fa-heart stats-health"></i>HP: <strong>@Model.State.HP</strong></li>
+            <li><i class="fas fa-coins stats-coins"></i>Coins: <strong>@Model.State.Coins</strong></li>
+            <li><i class="fas fa-fire-alt stats-mana"></i>Mana: <strong>@Model.State.Mana</strong></li>
+            <li><i class="fas fa-bolt stats-stamina"></i>Stamina: <strong>@Model.State.Stamina</strong></li>
+            <li><i class="fas fa-gavel stats-dmg"></i>Damage: <strong>@Model.State.DMGMX</strong></li>
+            <li><i class="fas fa-broom stats-mg"></i>Magic: <strong>@Model.State.MGMX</strong></li>
+        </ul>
+    </div>
+</div>
