@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "Y3b/dGIux80kvsdLyMqWPAFWzSVmfsnKmIafp2Ka1/3UTC9A3TOSRtcS4Z9AWBCY3PSHEAlwosypi9ledkLpWQ==",
+  "success": true,
+  "projectFilePath": "D:\\škola\\PRG\\C#\\source\\repos\\03TEST1\\03TEST1\\03TEST1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kozen\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.20\\microsoft.netcore.app.ref.6.0.20.nupkg.sha512",
+    "C:\\Users\\kozen\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.20\\microsoft.windowsdesktop.app.ref.6.0.20.nupkg.sha512",
+    "C:\\Users\\kozen\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.20\\microsoft.aspnetcore.app.ref.6.0.20.nupkg.sha512",
+    "C:\\Users\\kozen\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.20\\microsoft.netcore.app.host.win-x64.6.0.20.nupkg.sha512"
+  ],
+  "logs": []
+}
