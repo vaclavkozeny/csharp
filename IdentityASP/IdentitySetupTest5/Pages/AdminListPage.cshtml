@@ -1,0 +1,16 @@
+﻿@page
+@model IdentitySetupTest5.Pages.AdminListPageModel
+@{
+}
+
+
+<p>TEST</p>
+<table class="table-bordered table">
+    @foreach (var c in Model.Users)
+    {
+    <tr>
+        <td>@c.Name</td>
+        <td><a class="btn btn-danger" asp-page="./CupsListDetail" asp-route-id="@c.Id">Detail</a></td>
+    </tr>
+    }
+</table>

@@ -3,8 +3,8 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://147.230.229.101:54292",
-      "sslPort": 44381
+      "applicationUrl": "http://localhost:48242",
+      "sslPort": 44372
     }
   },
   "profiles": {
@@ -15,11 +15,11 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "GameBook": {
+    "IdentitySetupTest5": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,
-      "applicationUrl": "https://147.230.229.101:5001;http://147.230.229.101:5000",
+      "applicationUrl": "https://localhost:5001;http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

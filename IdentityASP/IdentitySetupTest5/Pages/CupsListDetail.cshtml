@@ -1,0 +1,23 @@
+﻿@page
+@model IdentitySetupTest5.Pages.CupsListDetailModel
+@{
+}
+
+
+<table class="table-bordered table">
+    <tr>
+        <th>Jméno</th>
+        <th>Datum vytvoření</th>
+        <th>Kávovar</th>
+    </tr>
+    @foreach (var c in Model.Coffees)
+    {
+    
+    <tr>
+        <td>@c.UserName</td>
+        <td>@c.Created</td>
+        <td>@c.MachineNo</td>
+    </tr>
+    }
+</table>
+<a asp-page = "./AdminListPage">Zpět</a>
