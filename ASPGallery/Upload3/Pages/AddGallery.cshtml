@@ -1,0 +1,51 @@
+﻿@page
+@model Upload3.Pages.AddGalleryModel
+
+@{
+    ViewData["Title"] = "AddGallery";
+}
+@if(Model.ErrorMessage != null)
+{
+    <div class="alerta alerta-red" role="alert">
+        @TempData["ErrorMessage"]
+    </div> 
+}
+@if(Model.SuccessMessage != null)
+{
+    <div class="alerta alerta-green" role="alert">
+        @TempData["SuccessMessage"]
+    </div> 
+}
+<h1>Add new gallery</h1>
+
+<div >
+    <div >
+        <form method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly"></div>
+            <div class="form-groupa">
+                <input asp-for="Gallery.OwnerId" type="hidden"  value="@Model.user"/>
+            </div>
+            <div class="form-groupa">
+                <label asp-for="Gallery.Name" ></label>
+                <input asp-for="Gallery.Name"  />
+                <span asp-validation-for="Gallery.Name" class="text-danger"></span>
+            </div>
+            <div class="form-groupa">
+                <label asp-for="Upload" >File</label>
+                <input type="file" asp-for="Upload" class="btna" required/>
+            </div>
+            <div class="form-groupa">
+                
+                <input type="checkbox" asp-for="Gallery.IsPublic" />
+                <label>Public</label>
+            </div>
+            <div class="form-groupa">
+                <input type="submit" value="Add" class="btna only" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,49 @@
+﻿@page
+@model Upload3.Pages.AddToGalleryModel
+
+@{
+    ViewData["Title"] = "AddToGallery";
+}
+@if(Model.ErrorMessage != null)
+{
+    <div class="alerta alerta-red" role="alert">
+        @TempData["ErrorMessage"]
+    </div> 
+}
+@if(Model.SuccessMessage != null)
+{
+    <div class="alerta alerta-green" role="alert">
+        @TempData["SuccessMessage"]
+    </div> 
+}
+<h1>Add picture to gallery</h1>
+
+
+<hr />
+<div >
+    <div >
+        <form method="post">
+            <div asp-validation-summary="ModelOnly"></div>
+            <div class="form-groupa">
+                <input asp-for="StoredFileGallery.StoredFileId"  type="hidden" value="@Model.getfileId" />
+                
+            </div>
+            <div class="form-groupa">
+                <label asp-for="StoredFileGallery.GalleryId" ></label>
+                <select asp-for="StoredFileGallery.GalleryId"  asp-items="ViewBag.GalleryId"></select>
+            </div>
+            <div class="form-groupa">
+                <label asp-for="StoredFileGallery.Name" ></label>
+                <input asp-for="StoredFileGallery.Name"  />
+            </div>
+            <div class="form-groupa">
+                <input type="submit" value="Create" class="btna only" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

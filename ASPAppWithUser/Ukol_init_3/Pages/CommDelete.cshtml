@@ -1,0 +1,34 @@
+﻿@page
+@model Ukol_init_3.Pages.CommDeleteModel
+
+@{
+    ViewData["Title"] = "CommDelete";
+}
+
+<h1>Samzat</h1>
+
+<h3>Opravdu chcete smazat tento komantář</h3>
+<div>
+    <h4>Komentář</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Comment.Message)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Comment.Message)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Comment.Thread)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Comment.Thread.Name)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Comment.Id" />
+        <input type="submit" value="Smazat" class="btn btn-danger" /> |
+        <a asp-page="./MyProfile" class="btn btn-primary">Zpět</a>
+    </form>
+</div>

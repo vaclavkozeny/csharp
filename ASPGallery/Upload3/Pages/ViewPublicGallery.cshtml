@@ -1,0 +1,55 @@
+﻿@page
+@model Upload3.Pages.ViewPublicGalleryModel
+@{
+}
+
+@if(Model.ErrorMessage != null)
+{
+    <div class="alerta alerta-red" role="alert">
+        @TempData["ErrorMessage"]
+    </div> 
+}
+@if(Model.SuccessMessage != null)
+{
+    <div class="alerta alerta-green" role="alert">
+        @TempData["SuccessMessage"]
+    </div> 
+}
+
+<h1 class="center">Gallery content</h1>
+@if (Model.FilesDB.Count > 0)
+{
+        <div class="flexa">
+            @foreach (var f in Model.FilesDB)
+            {
+                @if(f.StoredFile.Published == true)
+                {
+                    <a asp-page="Image" asp-route-id="@f.StoredFile.Id" >
+                    <div class="imagecont">
+                    <img src="@Url.Page("/Index","Thumbnail", new {filename=f.StoredFile.Id })" class="imagea" />
+                    <div class="hidden">
+                    <div class="middle">
+                            <a class="btna" asp-page-handler="download" asp-route-id="@f.StoredFile.Id">Download</a>     
+                    </div>
+                    </div>
+                    </div>
+                    </a>
+                }
+                else
+                {
+                    
+                    <div class="imagecont">
+                    <img src="./img/private-lock.png" width="250" height="250"/>
+                    <div class="hidden">
+                    <div class="middle">
+                            <p class="viewname">Private picture</p>     
+                    </div>
+                    </div>
+                    </div>
+                }
+        }</div>
+}
+else
+{
+    <p class="center">There are no files uploaded yet.</p>
+}

@@ -1,0 +1,19 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<h1>Nejnovější vlákna</h1>
+<a asp-page = "./AddThread" class = "btn btn-success">Vytvořit vlákno</a>
+<br />
+<br />
+<table class="table-bordered table">
+@foreach (var c in Model.Lists)
+    {
+    
+    <tr>
+        <td>@c.Name</td>
+        <td><a asp-page = "./ThreadDetail" asp-route-threadid="@c.Id" class = "btn btn-success">Zobrait</a></td>
+    </tr>
+    }
+</table>

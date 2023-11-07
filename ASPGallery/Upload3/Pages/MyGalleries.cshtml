@@ -1,0 +1,57 @@
+﻿@page
+@model Upload3.Pages.MyGalleriesModel
+@{
+}
+@if (Model.ErrorMessage != null)
+{
+    <div class="alerta alerta-red" role="alert">
+        @TempData["ErrorMessage"]
+    </div>
+}
+@if (Model.SuccessMessage != null)
+{
+    <div class="alerta alerta-green" role="alert">
+        @TempData["SuccessMessage"]
+    </div>
+}
+<div class="center">
+    <a class="btna" asp-page = "Upload">Upload</a>
+    <a class="btna" asp-page = "AddGallery">Add gallery</a>
+</div>
+
+
+        <div class="flexa">
+        @foreach (var f in Model.Galleries)
+
+
+        {
+
+        <a asp-page="MyFilesGallery" asp-route-gallid="@f.Id">
+            <div class="imagecont">
+                <img src="@Url.Page("/MyGalleries","Thumbnail", new {id=f.Id })" class="imagea">
+                <div class="hidden">
+                    <div class="middle">
+                        <p class="viewname">@f.Name</p>
+                        <a asp-page="DeleteGallery" asp-route-id="@f.Id" class="btna">Delete</a>
+                        <form method="post" asp-page="MyGalleries" asp-page-handler="Publish" asp-route-id="@f.Id">
+                            @if (f.IsPublic == false)
+                            {
+                                <input type="submit" value="Publish" class="btna">
+                            }
+                            else
+                            {
+                                <input type="submit" value="Unpublish" class="btna">
+                            }
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+
+
+
+        }</div>
+    
+
+

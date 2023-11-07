@@ -1,0 +1,32 @@
+﻿@page
+@model Upload3.Pages.UploadModel
+@{
+}
+@if(Model.ErrorMessage != null)
+{
+    <div class="alerta alerta-red" role="alert">
+        @TempData["ErrorMessage"]
+    </div> 
+}
+@if(Model.SuccessMessage != null)
+{
+    <div class="alerta alerta-green" role="alert">
+        @TempData["SuccessMessage"]
+    </div> 
+}
+<h1>Upload new file</h1>
+
+<div >
+    <div >
+        <form method="post" enctype="multipart/form-data">
+            <div class="form-groupa input">
+                
+                <input type="file" asp-for="Upload" class="btna only"  required accept="image/*"/>
+            </div>
+            <div class="form-groupa">
+                <input type="submit" value="Upload" class="btna only" />
+                
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,217 @@
+.btna {
+    background-color: #7e47ff;
+    color: white;
+    padding: 5px 10px 5px 10px;
+    margin: 5px;
+    border: solid white 1px;
+    border-radius: 0.25rem;
+    text-decoration: none;
+
+}
+.btna:hover{
+    color:white;
+    text-decoration: none;
+}
+.only{
+    margin: 5px 5px 5px 0px;
+}
+input[type="file"] {
+    background-color: #7e47ff;
+
+}
+.btn-primary {
+    background-color: #7e47ff;
+}
+.btn-primary:hover {
+    background-color: #7e47ff;
+}
+.btna a{
+    height:36px;
+}
+.viewname {
+    background-color: white;
+    color: black;
+    padding: 5px;
+    border: 1px solid #7e47ff;
+    border-radius: 0.25rem;
+}
+.form-groupa {
+    margin-bottom: 0.5rem;
+}
+.flexa {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+  justify-content: flex-start;
+  margin-top:0.25rem;
+}
+.flexb {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: relative;
+    justify-content: space-evenly;
+    margin-top: 0.25rem;
+}
+.foot {
+    background-color: #343a40;
+    position:absolute;
+    left: 0;
+    padding: 10px;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.center{
+    text-align:center;
+}
+.centera{
+
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.alerta {
+    position: relative;
+    padding: 7px;
+    border-radius: 0.25rem;
+    margin-bottom: 5px;
+}
+.alerta-green{
+    background-color:lightgreen;
+}
+.alerta-red {
+    background-color:lightsalmon;
+}
+.imagecont {
+  position: relative;
+  margin: 10px;
+}
+
+.imagea {
+  opacity: 1;
+  display: block;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+  border-radius: 10px;
+}
+
+.middle {
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.middle a {
+  margin-bottom: 3px;
+}
+.imagecont:hover .image {
+    opacity: 0.5;
+}
+
+.imagecont:hover .middle {
+    opacity: 1;
+}
+.nava {
+    display: flex;
+    justify-content: left;
+    list-style-type: none;
+    margin: 0 0 10px 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #343a40;
+    -webkit-border-bottom-right-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+    .nava > li {
+        align-self: center;
+        margin: 5px;
+        
+    }
+#first{
+    margin-left:45px;   
+}
+.lir{
+    display: flex;
+    flex-direction:row;
+    margin-left: auto;
+    list-style: none;
+    margin-right:45px;
+}
+    .lir > li {
+        align-self: center;
+        margin: 5px;
+        text-decoration: none;
+
+    }
+        .lir > li a {
+            display: block;
+            text-align: center;
+            padding: 5px;
+            text-decoration: none;
+            color: white;
+            border: solid #343a40 1px;
+            border-radius: 0.25rem;
+        }
+.log {
+    border: solid #343a40 1px;
+}
+.nava > li a {
+    display: block;
+    text-align: center;
+    padding: 5px;
+    text-decoration: none;
+    color: white;
+    background-color: #7e47ff;
+    border: solid #343a40 1px;
+    border-radius: 0.25rem;
+}
+input[type=text] {
+    border: 1px solid #7e47ff;
+    border-radius: 0.25rem;
+}
+.nav-item a{
+    color: #7e47ff;
+    text-decoration:none;
+}
+
+p a {
+    color: #7e47ff;
+}
+    p a:hover {
+        color: #7e47ff;
+    }
+.form-control {
+    border: solid 1px #7e47ff;
+}h1{
+     margin-top:5px;
+ }
+@font-face {
+    font-family: myfont;
+    src: url(../font/Nunito-Regular.ttf);
+}
+body{
+    font-family:myfont; 
+}
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    background-color: #7e47ff;
+}
+
+

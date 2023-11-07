@@ -1,0 +1,65 @@
+﻿@page
+@model Upload3.Pages.MyFilesModel
+@{
+}
+@if(Model.ErrorMessage != null)
+{
+    <div class="alerta alerta-red" role="alert">
+        @TempData["ErrorMessage"]
+    </div> 
+}
+@if(Model.SuccessMessage != null)
+{
+    <div class="alerta alerta-green" role="alert">
+        @TempData["SuccessMessage"]
+    </div> 
+}
+<div class="center">
+    <a class="btna" asp-page = "Upload">Upload</a>
+    <a class="btna" asp-page = "AddGallery">Add gallery</a>
+</div>
+<h1 class="center">Your files</h1>
+@if (Model.FilesDB.Count > 0)
+{
+    <div class="center">
+    <p>Sort: </p>
+    <a asp-page-handler="sort" asp-route-id="1" class="btna">Date</a>
+    <a asp-page-handler="sort" asp-route-id="2" class="btna" >Name</a>
+    <a asp-page-handler="sort" asp-route-id="3" class="btna" >Public first</a>
+    </div>
+    
+    <div class="flexa">
+    @foreach (var f in Model.FilesDB)
+    {
+        <a asp-route-id="@f.Id" asp-page="Image" >
+            <div class="imagecont">
+                <img src="@Url.Page("/Index","Thumbnail", new {filename=f.Id })" class="imagea">
+                <div class="hidden">
+                    <div class="middle">
+                        
+                        <a class="btna" asp-page-handler="download" asp-route-id="@f.Id">Download</a>
+                        <a class="btna" asp-page-handler="delete" asp-route-id="@f.Id">Delete</a>
+                        <a class="btna" asp-page="AddToGallery" asp-route-fileId="@f.Id">Add to gallery</a>
+                        <form method = "post"  asp-page = "MyFiles" asp-page-handler="Publish" asp-route-id="@f.Id">
+                                @if (f.Published)
+                                {
+                                    <input type="submit" value = "Unpublish" class="btna">
+                                }
+                                else
+                                {
+                                    <input type = "submit" value = "Publish" class="btna">   
+                                }
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </a>
+    }
+    </div>
+
+}
+
+else
+{
+    <p class="center">There are no files uploaded yet.</p>
+}

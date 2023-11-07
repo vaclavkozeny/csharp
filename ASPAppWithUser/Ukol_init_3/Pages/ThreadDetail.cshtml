@@ -1,0 +1,26 @@
+﻿@page
+@model Ukol_init_3.Pages.ThreadDetailModel
+@{
+}
+
+<h1>@Model.Forum.Name</h1>
+<h2>@Model.Forum.User.Email</h2>
+<br />
+<a asp-page = "./AddComment" asp-route-threadid="@Model._threadId" class = "btn btn-success">Komentovat</a>
+<br />
+<br />
+<table class="table-bordered table">
+    
+    @foreach (var c in Model.Comments)
+    {
+        <tr>
+            <td>
+                <table class="table-bordered table">
+                    <tr><th><a asp-page = "Profile" asp-route-userId = "@c.User.Id" >@c.User.FirstName @c.User.LastName</a></th></tr>
+                    <tr><td>@c.Message</td></tr>
+                </table>
+            </td>
+        </tr>
+    
+    }
+</table>

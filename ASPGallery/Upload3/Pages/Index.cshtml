@@ -1,0 +1,71 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+@if(Model.ErrorMessage != null)
+{
+    <div class="alerta alerta-red" role="alert">
+        @TempData["ErrorMessage"]
+    </div> 
+}
+@if(Model.SuccessMessage != null)
+{
+    <div class="alerta alerta-green" role="alert">
+        @TempData["SuccessMessage"]
+    </div> 
+}
+<div class="center">
+    <a class="btna" asp-page = "Upload">Upload</a>
+    <a class="btna" asp-page = "AddGallery">Add gallery</a>
+</div>
+<h1 class="center">Public files</h1>
+
+@if (Model.FilesDB.Count > 0)
+{
+    <div class="flexa">
+    @foreach (var f in Model.FilesDB)
+    {
+        <a asp-route-id="@f.Id" asp-page="Image" >
+            <div class="imagecont">
+                <img src="@Url.Page("/Index","Thumbnail", new {filename=f.Id })" class="imagea">
+                <div class="hidden">
+                    <div class="middle">
+                        <a class="btna" asp-page-handler="download" asp-route-id="@f.Id">Download</a>
+                    </div>
+                </div>
+            </div>
+        </a>
+    }
+    </div>
+
+}
+else
+{
+    <p class="center">There are no files uploaded yet.</p>
+}
+<h1 class="center">Public galleries</h1>
+@if (Model.Galleries.Count > 0)
+{
+    <div class="flexa">
+    @foreach (var f in Model.Galleries)
+        {
+            <a asp-page="ViewPublicGallery" asp-route-gallid="@f.Id" >
+            <div class="imagecont">
+                <img src="@Url.Page("/MyGalleries","Thumbnail", new {id=f.Id })" class="imagea">
+                <div class="hidden">
+                    <div class="middle">
+                        <p class="viewname">@f.Name</p>
+                        <p class="viewname">@f.Owner.Email</p>
+                    </div>
+                </div>
+            </div>
+            </a>
+            
+        }
+ </div>
+}
+else
+{
+    <p class="center">There are no galleries public yet.</p>
+}

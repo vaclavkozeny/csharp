@@ -1,0 +1,51 @@
+﻿@page
+@model Ukol_init_3.Pages.ProfileModel
+@{
+}
+<p><b>@Model.MyUser.FirstName @Model.MyUser.LastName</b></p>
+<p>@Model.MyUser.Email</p>
+
+
+<br />
+<h2>Komentáře uživatele @Model.MyUser.FirstName</h2>
+<br />
+<table class="table-bordered table">
+    
+    @foreach (var c in Model.Comments)
+    {
+    
+        <tr>
+            <td>
+                <table class="table-bordered table">
+                    <tr><th>@c.Thread.Name</th></tr>
+                    <tr><td>@c.Message</td></tr>
+                    <tr>
+                    <td><a asp-page = "ThreadDetail" asp-route-threadid = "@c.ThreadId" class = "btn btn-primary">Zobrazit</a></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    
+    }
+</table>
+<br />
+<h2>Vlákna uživatele @Model.MyUser.FirstName</h2>
+<br />
+<table class="table-bordered table">
+    
+    @foreach (var c in Model.Threads)
+    {
+    
+        <tr>
+            <td>
+                <table class="table-bordered table">
+                    <tr><th>@c.Name</th></tr>
+                    <tr>
+                    <td><a asp-page = "ThreadDetail" asp-route-threadid = "@c.Id" class = "btn btn-primary">Zobrazit</a></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    
+    }
+</table>
