@@ -1,0 +1,49 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+@if (Model.SuccessMessage != null)
+{
+    <div class="alert alert-success">@Model.SuccessMessage</div>
+}
+<h1>Nákupní košík</h1>
+@if (Model.Cart.Count == 0)
+{
+    <p>Košík je prázdný.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Zboží</th>
+                <th>Počet kusů</th>
+                <th>Jednotková cena</th>
+                <th>Cena</th>
+                <th>Akce</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int a = 0; a < Model.Cart.Count; a++)
+            {
+                <tr>
+                    <td>@Model.Cart[a].Name</td>
+                    <td>@Model.Cart[a].Amount</td>
+                    <td>@Model.Cart[a].UnitPrice</td>
+                    <td>@(Model.Cart[a].UnitPrice * Model.Cart[a].Amount)</td>
+                    <td>
+                        <form method="post">
+                            <input type="hidden" value="@a" />
+                            <button class="btn btn-danger">Odstranit</button>
+                        </form>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+<div>
+    <a asp-page="./Add" class="btn btn-primary">Přidat novou položku</a>
+</div>

@@ -1,0 +1,43 @@
+﻿<Window x:Class="ColorFilter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ColorFilter"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="136*"/>
+            <ColumnDefinition Width="45*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical">
+        </StackPanel>
+        <Image Grid.Column="0" Grid.Row="0" x:Name="myImage" />
+        <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Vertical"  >
+            <Button Content="Vyberte obrázek" Click="Button_Click" FontSize="18"/>
+            <Button Content="Revert" Click="ROriginal" FontSize="18"/>
+            <Button Content="Red" Click="Barvy" Tag="red"/>
+            <Button Content="Green" Click="Barvy" Tag="green"/>
+            <Button Content="Blue" Click="Barvy" Tag="blue"/>
+            <Button Content="Gray" Click="Barvy" Tag="gray"/>
+            <Button Content="Reduce" Click="Reduce"/>
+            <Button Content="Negative" Click="Barvy" Tag="negative"/>
+            <Button Content="Parallel Pixelate" Click="PixelateParallel"/>
+            <Button Content="Pixelate" Click="Pixelate" />
+            <Button Content="Parallel Mirror" Click="ParallelZrcadlo" />
+            <Button Content="Mirror" Click="Zrcadlo" />
+            <Button Content="Random Color" Click="Barvy" Tag="random"/>
+            <Button Content="Old Photo" Click="Barvy" Tag="brown"/>
+            <Button Content="Sepie" Click="Barvy" Tag="sepie"/>
+            <Button Content="Parallel Bulge" Click="ParallelBublina" />
+            <Button Content="Bulge" Click="Bublina" />
+            <Slider Minimum="0" Maximum="1" x:Name="MySlider"/>
+            <Button Content="Parallel Spiral" Click="ParallelSpiral" />
+            <Button Content="Spirála" Click="Spiral" />
+            <Button Content="Edge Detect" Click="EdgeDetect" />
+            
+        </StackPanel>
+    </Grid>
+</Window>

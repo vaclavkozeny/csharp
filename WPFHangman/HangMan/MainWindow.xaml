@@ -1,0 +1,58 @@
+﻿<Window x:Class="HangMan.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HangMan"
+        xmlns:vm="clr-namespace:HangMan.ViewModel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize">
+    <Window.DataContext>
+        <vm:PageVM/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="13*"/>
+            <RowDefinition Height="18*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="69*"/>
+        </Grid.ColumnDefinitions>
+        <UniformGrid Grid.Column="0" Margin="0,182,0,0" Grid.RowSpan="2">
+            <Button Content="A" Command="{Binding Click}" CommandParameter="A"/>
+            <Button Content="B" Command="{Binding Click}" CommandParameter="B"/>
+            <Button Content="C" Command="{Binding Click}" CommandParameter="C"/>
+            <Button Content="D" Command="{Binding Click}" CommandParameter="D"/>
+            <Button Content="E" Command="{Binding Click}" CommandParameter="E"/>
+            <Button Content="F" Command="{Binding Click}" CommandParameter="F"/>
+            <Button Content="G" Command="{Binding Click}" CommandParameter="G"/>
+            <Button Content="H" Command="{Binding Click}" CommandParameter="H"/>
+            <Button Content="I" Command="{Binding Click}" CommandParameter="I"/>
+            <Button Content="J" Command="{Binding Click}" CommandParameter="J"/>
+            <Button Content="K" Command="{Binding Click}" CommandParameter="K"/>
+            <Button Content="L" Command="{Binding Click}" CommandParameter="L"/>
+            <Button Content="M" Command="{Binding Click}" CommandParameter="M"/>
+            <Button Content="N" Command="{Binding Click}" CommandParameter="N"/>
+            <Button Content="O" Command="{Binding Click}" CommandParameter="O"/>
+            <Button Content="P" Command="{Binding Click}" CommandParameter="P"/>
+            <Button Content="Q" Command="{Binding Click}" CommandParameter="Q"/>
+            <Button Content="R" Command="{Binding Click}" CommandParameter="R"/>
+
+            <Button Content="S" Command="{Binding Click}" CommandParameter="S"/>
+            <Button Content="T" Command="{Binding Click}" CommandParameter="T"/>
+            <Button Content="U" Command="{Binding Click}" CommandParameter="U"/>
+            <Button Content="V" Command="{Binding Click}" CommandParameter="V"/>
+            <Button Content="W" Command="{Binding Click}" CommandParameter="W"/>
+            <Button Content="X" Command="{Binding Click}" CommandParameter="X"/>
+            <Button Content="Y" Command="{Binding Click}" CommandParameter="Y"/>
+            <Button Content="Z" Command="{Binding Click}" CommandParameter="Z"/>
+        </UniformGrid>
+        <Label Content="{Binding Badguesses}" HorizontalAlignment="Left" Margin="678,113,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding WordNo}" HorizontalAlignment="Center" Margin="0,91,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.762,0.298"/>
+        <Label Content="{Binding Win}" HorizontalAlignment="Left" Margin="668,38,0,0" VerticalAlignment="Top" Background="{Binding WinColor}"/>
+        <TextBox x:Name="lableWord" Text="{Binding Word, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="35,34,632,114"/>
+        <Button Content="Reset" HorizontalAlignment="Left" Margin="69,121,0,0" VerticalAlignment="Top" Command="{Binding Start}"/>
+
+
+    </Grid>
+</Window>

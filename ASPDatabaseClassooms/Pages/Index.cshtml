@@ -1,0 +1,36 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div>
+    <a asp-page="./CreateClass" class="btn btn-success">Přidat třídu </a>
+</div>
+<table class="table-bordered table">
+    @foreach (var c in Model.Classrooms)
+    {
+    <tr>
+        <td>@c.Name</td>
+        <td><a class="btn btn-primary" asp-page="./DetailClass" asp-route-id="@c.Id">Detail</a></td>
+        <td><a class="btn btn-primary" asp-page="./editClass" asp-route-id="@c.Id">Edit</a></td>
+        <!--<td><a class="btn btn-secondary" asp-page="./DeleteClass" asp-route-id="@c.Id"></a></td>-->
+        <td><a class="btn btn-danger" asp-page="./DeleteClass" asp-route-id="@c.Id">Delete</a></td>
+
+    </tr>
+    }
+</table>
+<div>
+    <a asp-page="./CreateStudent" class="btn btn-success">Přidat studenta </a>
+</div>
+<table class="table-bordered table">
+    @foreach (var c in Model.Students)
+    {
+        <tr>
+            <td>@c.Firstname</td>
+            <td>@c.Lastname</td>
+            <td>@c.Classroom.Name</td>
+            <td>@c.ShoeSize</td>
+        </tr>
+    }
+</table>
